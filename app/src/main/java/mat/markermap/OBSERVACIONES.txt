@@ -17,10 +17,17 @@ PASOS:
     ubicaciones en el mapa (pojo).
     -las Nota sera lo que guardaremos en la base de datos de Firebase
 
-3.Se crea NoteMap.java
+3. Se crea NoteMap.java
     -Esta clase extiende de Aplication. Lo que significa que esta por encima
     del Activity_main.
     -Nos creara/conectara con nuestra base de datos de Firebase
     -Para ello, tendremos que modificar dependencias y packagingOptions:
         visitar siguiente link para configurarlo:
             https://www.firebase.com/docs/android/quickstart.html
+
+
+
+
+DUDAS Y ERRORES:
+En Fragment_main lineas 42 y 51 (ver dependencias?)
+    Si las eliminamos, nos genera un error en el mngToast getContext

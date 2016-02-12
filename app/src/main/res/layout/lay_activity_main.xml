@@ -1,4 +1,4 @@
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:id="@+id/fragment"
-    android:name="mat.markermap.Activity_main" tools:layout="@layout/layout_fragment_main"
+    android:name="mat.markermap.Fragment_main" tools:layout="@layout/layout_fragment_main"
     android:layout_width="match_parent" android:layout_height="match_parent" />

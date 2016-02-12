@@ -29,21 +29,23 @@ public class Fragment_main extends Fragment {
         NoteMap app = (NoteMap)getActivity().getApplication();
         Firebase ref = app.getRef();
 
-        ref.child("prueba").setValue("Mc Culo");
+        ref.child("hijo1").setValue("valor_1");
 
-        Nota notaInicial = new Nota("Ecaib", "Instituto Poblenou", 41.39834,2.20318);
+        Nota notaInicial = new Nota("Ecaib", "Institut Poblenou", 41.39834,2.20318);
         Nota notaVacia = new Nota();
         ref.child("prueba").child("Notas").child("nota1").setValue(notaInicial);
         ref.child("prueba").child("Notas").child("nota2").setValue(notaVacia);
 
 
-        ref.child("prueba").child("Notas").child("nota1")
+        ref.child("hijo1").child("Notas").child("nota2")
                 .addValueEventListener(new ValueEventListener() {
-                    @TargetApi(Build.VERSION_CODES.M)
+                    //@TargetApi(Build.VERSION_CODES.M)
                     @Override
                     public void onDataChange(DataSnapshot snapshot) {
                         System.out.println("XXX:" + snapshot.getValue());
-                        msgToast(getContext(), "titulo", snapshot.getValue().toString());
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            msgToast(getContext(), "titulo", snapshot.getValue().toString());
+                        }
 
                         System.out.println(snapshot.getValue().toString());
                     }
@@ -52,7 +54,9 @@ public class Fragment_main extends Fragment {
                     @Override
                     public void onCancelled(FirebaseError error) {
 
-                        msgToast(getContext(), "Error", "Listener");
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            msgToast(getContext(), "Error", "Listener");
+                        }
                     }
                 });
         return view;
