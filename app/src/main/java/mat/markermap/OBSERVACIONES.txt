@@ -1,0 +1,26 @@
+Nuestra aplicacion nos permitira añadir Notas sobre un mapa del lugar deseado.
+Las notas ubicadas en el mapa tendran la siguiente informacion:
+        titulo
+        descripcion
+        longitud
+        latitud
+
+Todas ellas se guardaran en una base de datos Firebase
+
+
+PASOS:
+
+1. Se crea activity y (empty)fragment con sus correspondientes layouts
+
+2. Se crea el objecto a mapear (Nota)
+    -Nota.java sera el objecto con el que marcaremos las
+    ubicaciones en el mapa (pojo).
+    -las Nota sera lo que guardaremos en la base de datos de Firebase
+
+3.Se crea NoteMap.java
+    -Esta clase extiende de Aplication. Lo que significa que esta por encima
+    del Activity_main.
+    -Nos creara/conectara con nuestra base de datos de Firebase
+    -Para ello, tendremos que modificar dependencias y packagingOptions:
+        visitar siguiente link para configurarlo:
+            https://www.firebase.com/docs/android/quickstart.html
